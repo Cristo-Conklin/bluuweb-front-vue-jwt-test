@@ -37,17 +37,27 @@ export default createStore({
       } catch (error) {
         console.log(error);
       }
-    }
-  },
-  leerToken({
-    commit
-  }) {
-    if (localStorage.getItem('token')) {
-      commit('setToken', localStorage.getItem('token'))
-    } else {
+    },
+    leerToken({
+      commit
+    }) {
+      if (localStorage.getItem('token')) {
+        commit('setToken', localStorage.getItem('token'))
+        console.log("token read from localS to state");
+      } else {
+        console.log("no token from leerT func");
+        commit('setToken', null)
+      }
+    },
+    cerrarSesion({
+      commit
+    }) {
       commit('setToken', null)
+      localStorage.removeItem('token')
     }
+
   },
+
 
   modules: {}
 })
