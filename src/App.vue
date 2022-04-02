@@ -4,8 +4,8 @@
     <router-link to="/about">About</router-link> |
     <button @click="cerrarSesion">Cerrar sesión</button>
   </nav>
-  <router-view />
 </template>
+  <router-view />
 
 <style>
 #app {
